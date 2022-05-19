@@ -5,7 +5,8 @@
 !system/cache/*
 !*/cache/index.html
 !*/cache/.htaccess
-
+application/config.php
+application/database.php
 user_guide_src/build/*
 user_guide_src/cilexer/build/*
 user_guide_src/cilexer/dist/*
