@@ -9,7 +9,8 @@ class Dashboard extends CI_Controller{
     {
         parent::__construct();
         $this->load->model('Pesertum_model');
-				$this->load->library("Pdf");
+        $this->load->model('Pengaturan_model');
+		$this->load->library("Pdf");
         
     }
 
@@ -42,6 +43,15 @@ class Dashboard extends CI_Controller{
 				'datetime' => date("Y-m-d H:i:s"),
             );
 			$this->Logdownload_model->add_logdownload($params);
+			$data = array(			
+				'tglundangan' => $this->Pengaturan_model->getSetting('tglundangan'),
+				'nomorundangan' => $this->Pengaturan_model->getSetting('nomorundangan'),
+				'perihalundangan' => $this->Pengaturan_model->getSetting('perihalundangan'),
+				'nomorsk' => $this->Pengaturan_model->getSetting('nomorsk'),
+				'tglregist' => $this->Pengaturan_model->getSetting('tglregist'),
+				'nomorsk' => $this->Pengaturan_model->getSetting('nomorsk'),
+				'nopengumuman' => $this->Pengaturan_model->getSetting('nopengumuman'),
+			);
 			$data['pesertum'] = $this->Pesertum_model->get_pesertum($this->input->post('nopeserta'));
 			$this->load->view('cetak',$data);
     }

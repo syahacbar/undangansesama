@@ -1,6 +1,6 @@
 ﻿<?php
 			$pdf = new Pdf('P', 'mm', 'A4', true, 'UTF-8', false);
-      $pdf->SetTitle('Undangan Calon Mahasiswa Baru Jalur SESAMA UNIPA 2021');
+      $pdf->SetTitle('Undangan Calon Mahasiswa Baru Jalur SESAMA UNIPA '.date("Y"));
       $pdf->SetPrintHeader(false);
       $pdf->SetPrintFooter(false);
       		$pdf->SetMargins(25, 30, 20);
@@ -37,12 +37,13 @@
 	<tr><td>&nbsp;</td></tr>
 	<tr>
 		<td width="15%">Nomor</td>
-		<td cellpadding="5" width="70%" align="left">: 111/UN42/TU/2021 </td>
-		<td width="15%" align="right">4 Mei 2021</td>
+		<td cellpadding="5" width="70%" align="left">: '.$nomorundangan.' </td>
+		<td width="15%" align="right">'.$tglundangan.'</td>
 	</tr>
 	<tr>
 		<td width="15%">Perihal</td>
-		<td width="85%" align="left" colspan="2">: Undangan Calon Mahasiswa Baru Jalur SESAMA UNIPA 2021</td>
+		<td width="70%" align="left" colspan="2">: '.$perihalundangan.'</td>
+		<td width="15%" align="left" colspan="2"></td>
 	</tr>
 </table>
 <br><br><br><br>
@@ -66,7 +67,7 @@ di Tempat.
 </table>
 -->
 <br><br>
-<p style="text-align:justify">&nbsp;&nbsp;&nbsp;&nbsp; Berdasarkan Surat Keputusan Rektor Universitas Papua No: SP-122/UN42/TU/2021 maka, Rektor Universitas Papua  mengundang Saudara/i Sebagai Calon Mahasiswa Baru pada:</p>
+<p style="text-align:justify">&nbsp;&nbsp;&nbsp;&nbsp; Berdasarkan Surat Keputusan Rektor Universitas Papua No: '.$nomorsk.' maka, Rektor Universitas Papua  mengundang Saudara/i Sebagai Calon Mahasiswa Baru pada:</p>
 
 <table border="0">
 	<tr>
@@ -82,7 +83,7 @@ di Tempat.
 		<td width="80%">: <b>'.$pesertum['nopendaftar'].'</b></td>
 	</tr>
 </table>
-<p style="text-align:justify">Selanjutnya Saudara/i diwajibkan untuk melakukan registrasi ke Universitas Papua pada Tanggal <b>14 Juni 2021 sampai dengan 31 Juni 2021.</b> Saudara/i harap memperhatikan Surat Pengumuman Rektor Nomor : 442/UN42/TU/2021 tentang Prosedur Registrasi lulusan SESAMA-UNIPA Tahun 2021 di website/laman: <font style="text-decoration: underline;color:blue">https://bpak.unipa.ac.id/</font>. Apabila Saudara/i tidak mendaftar ulang pada waktu yang telah ditentukan, maka Saudara/i <b><u>“DINYATAKAN GUGUR/MENGUNDURKAN DIRI”.</u></b> </p>
+<p style="text-align:justify">Selanjutnya Saudara/i diwajibkan untuk melakukan registrasi ke Universitas Papua pada Tanggal <b>'.$tglregist.'.</b> Saudara/i harap memperhatikan Surat Pengumuman Rektor Nomor : '.$nopengumuman.' tentang Prosedur Registrasi lulusan SESAMA-UNIPA Tahun '.date("Y").' di website/laman: <font style="text-decoration: underline;color:blue">https://bpak.unipa.ac.id/</font>. Apabila Saudara/i tidak mendaftar ulang pada waktu yang telah ditentukan, maka Saudara/i <b><u>“DINYATAKAN GUGUR/MENGUNDURKAN DIRI”.</u></b> </p>
 <p>Demikian untuk diperhatikan.</p>
 </font>
 <table border="0">
@@ -93,5 +94,5 @@ di Tempat.
 </table>';
       $pdf->writeHTML($html, true, false, true, false, '');
 			ob_end_clean();
-			$pdf->Output('Undangan Calon Mahasiswa Baru Jalur SESAMA UNIPA 2021'.$pesertum['nopendaftar'].'.pdf', 'I');
+			$pdf->Output('Undangan Sesama - '.$pesertum['nopendaftar'].'.pdf', 'I');
 ?>
