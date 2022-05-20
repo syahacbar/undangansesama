@@ -13,6 +13,7 @@ class Dashboard extends CI_Controller{
         
     }
 
+
     function index()
     {
 				$this->load->model('Logdownload_model');
@@ -20,14 +21,20 @@ class Dashboard extends CI_Controller{
 				
 				$this->load->view('dashboard',$data);
     }
-		
-		function lihatdata ()
-		{
-				$data['pesertum'] = $this->Pesertum_model->get_pesertum($this->input->post('nopeserta'));
-				$this->load->view('lihatpeserta',$data);
-		}
-		
-		function cetak()
+
+    function searchPeserta()
+	{
+		$q = $this->input->get('q');
+		echo json_encode($this->Pesertum_model->getPeserta($q));
+	}
+	
+	function lihatdata ()
+	{
+			$data['pesertum'] = $this->Pesertum_model->get_pesertum($this->input->post('nopeserta'));
+			$this->load->view('lihatpeserta',$data);
+	}
+	
+	function cetak()
     {
 			$this->load->model('Logdownload_model');
 			$params = array(

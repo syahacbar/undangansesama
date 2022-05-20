@@ -18,6 +18,15 @@ class Pesertum_model extends CI_Model
     {
         return $this->db->get_where('v_penerimaanx',array('nopendaftar'=>$nopendaftar))->row_array();
     }
+
+    function getPeserta($str)
+    {
+        $this->db->select('nopendaftar AS id, namapendaftar AS text');
+        $this->db->like('namapendaftar', $str);
+        //$this->db->or_like('nopendaftar',$str);
+        $query = $this->db->get('v_penerimaanx');
+        return $query->result();
+    }
         
     /*
      * Get all peserta

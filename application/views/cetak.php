@@ -14,7 +14,7 @@
 
 <table border="0" cellspacing=0 cellpadding=0>
 	<tr>
-		<td rowspan="5" width="15%"><img src="http://bpak.unipa.ac.id/undangansesama/assets/unipa-warna.png" width="70" height="70"></td>
+		<td rowspan="5" width="15%"><img src="'.base_url().'/assets/unipa-warna.png" width="70" height="70"></td>
 		<td align="center" width="75%"><font style="font-family:times" size="14"><b>KEMENTERIAN PENDIDIKAN DAN KEBUDAYAAN</b></font></td>
 		<td rowspan="5" width="10%"></td>
 	</tr>
