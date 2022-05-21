@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>Undangan SESAMA UNIPA 2021</title>
+        <title>Undangan SESAMA UNIPA 2022</title>
 
 <link href="//netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
@@ -12,7 +12,7 @@
 	<div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">   
 	<div class="panel panel-info">
                         <div class="panel-heading">
-                            <div class="panel-title"><center>PESERTA LULUS SELEKSI JALUR SESAMA UNIPA TAHUN 2021</div>
+                            <div class="panel-title"><center>PESERTA LULUS SELEKSI JALUR SESAMA UNIPA TAHUN 2022</div>
                             </center></div>  
                         <div class="panel-body" >
                             <form id="signupform" class="form-horizontal" role="form" action="<?php echo site_url();?>dashboard/cetak" method="POST">
